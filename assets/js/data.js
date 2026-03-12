@@ -1,0 +1,153 @@
+window.PROJECT_MEDIA = [
+  {
+    id: "villa-voorzijde",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111199.jpg?portalid=4286&check=api_sha256%3a5c4e30a583c1350d336579c12a7552ae5c8e7c22ba5d54dda83f93b4aa2f7379&=20241204083948&width=2160&height=1440",
+    alt: "Voorzijde van de vrijstaande villa aan de Eijerdijk in Hattem.",
+    caption: "Vrijstaande villa met volwassen groen en rustige uitstraling.",
+    tags: ["hero", "gallery", "exterieur"],
+  },
+  {
+    id: "oprijlaan-en-groen",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111209.jpg?portalid=4286&check=api_sha256%3a9adc9d5e39ac4476d71cfe6e00b8e86665045a0b2e2e140d24857c320593ca7f&v=20241204083948&width=2160&height=1440",
+    alt: "Uitzicht op oprijlaan en groene tuin rondom het pand.",
+    caption: "Ruimte, privacy en veel groen rondom het hoofdgebouw.",
+    tags: ["gallery", "exterieur", "tuin"],
+  },
+  {
+    id: "zijaanzicht-villa",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111217.jpg?portalid=4286&check=api_sha256%3af3c14cab60f3bb6842790a0991ae9ead8f9f69c24b83223a011ad31b590299e6&v=20241204083948&width=2160&height=1440",
+    alt: "Zijaanzicht van de villa met ramen en monumentale details.",
+    caption: "Monumentale uitstraling met moderne kwaliteit.",
+    tags: ["gallery", "exterieur"],
+  },
+  {
+    id: "entree-hal",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111229.jpg?portalid=4286&check=api_sha256%3a95fc7fa8695df55757de910eb0444ca446a09eeb98395aad749624564162c626&v=20241204083948&width=2160&height=1440",
+    alt: "Representatieve entree en hal met warme materialen.",
+    caption: "Sfeerbeeld van de gedeelde binnenruimte.",
+    tags: ["gallery", "interieur"],
+  },
+  {
+    id: "woonkamer-sfeer",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111233.jpg?portalid=4286&check=api_sha256%3a337d9da8f7b634177ba18ef47ab84cb31c9200eb3e6bebdf8bbea9a1035b00d2&v=20241204083948&width=2160&height=1440",
+    alt: "Ruime woonkamer met daglicht en klassieke details.",
+    caption: "Gedeelde woonkamer en keuken vormen het hart van ontmoeting.",
+    tags: ["gallery", "interieur", "gedeelde-ruimte"],
+  },
+  {
+    id: "keuken-ruimte",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111239.jpg?portalid=4286&check=api_sha256%3a1b79fc7788b76df98c3699ef1d9a55e0150b60a311bef87726afeee1e6923d9e&v=20241204083948&width=2160&height=1440",
+    alt: "Sfeerbeeld van een royale leefkeuken.",
+    caption: "Gezamenlijke keuken als plek voor dagelijks contact.",
+    tags: ["gallery", "interieur", "gedeelde-ruimte"],
+  },
+  {
+    id: "tuin-zithoek",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111243.jpg?portalid=4286&check=api_sha256%3a44f16d40571319d48a70b8d164e5b0610ede4b6154005b40e6f1f4a9250aafc7&v=20241204083948&width=2160&height=1440",
+    alt: "Grote tuin met volwassen bomen en rust.",
+    caption: "De tuin biedt ruimte voor stilte, wandelen en ontmoeting.",
+    tags: ["gallery", "tuin"],
+  },
+  {
+    id: "veranda-bijgebouw",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111247.jpg?portalid=4286&check=api_sha256%3ad00b6f6105ddc4c96a8030959a71e07a7420d8d7cb4c2ecebdf5d9936eb4a96c&v=20241204083948&width=2160&height=1440",
+    alt: "Bijgebouw en veranda op het perceel.",
+    caption: "Ruimte op het terrein maakt verkenning naar extra units mogelijk.",
+    tags: ["gallery", "tuin", "verkenning"],
+  },
+  {
+    id: "kamer-sfeer-1",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111255.jpg?portalid=4286&check=api_sha256%3a5190ee7b969cc8caa90485fa2d0ca2d995714b6901b8d0f9119ef3d5b66daebc&v=20241204083948&width=2160&height=1440",
+    alt: "Lichte kamer met rustige uitstraling.",
+    caption: "Voorbeeld van een private woonruimte in warme sfeer.",
+    tags: ["gallery", "interieur"],
+  },
+  {
+    id: "kamer-sfeer-2",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111261.jpg?portalid=4286&check=api_sha256%3ac5b73020f8bd243bcfeb883ee35584e352850c996b5671973ef0b2abd3f6c89e&v=20241204083948&width=2160&height=1440",
+    alt: "Extra kamer die gebruikt kan worden als gastenkamer.",
+    caption: "Er is ook een extra kamer die inzetbaar is als gastenruimte.",
+    tags: ["gallery", "interieur", "gastenkamer"],
+  },
+  {
+    id: "tuinpad",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111265.jpg?portalid=4286&check=api_sha256%3a1102cd7fae8603e820bbd26e19244b821cda786abba5d82b57687d4a5061b6e3&v=20241204083948&width=2160&height=1440",
+    alt: "Tuinpad met zicht op het perceel.",
+    caption: "Veel buitenruimte direct rondom de woning.",
+    tags: ["gallery", "tuin"],
+  },
+  {
+    id: "uitzicht-groen",
+    src: "https://images.realworks.nl/servlets/images/media.objectmedia/198111273.jpg?portalid=4286&check=api_sha256%3a9ce85371b1f3bd84c4aadca63b738552deca79175c63e67399d92ee3903af9ed&v=20241204083948&width=2160&height=1440",
+    alt: "Groene omgeving rondom Eijerdijk 87.",
+    caption: "Natuur en rust zijn een vast onderdeel van het woongevoel.",
+    tags: ["gallery", "exterieur", "omgeving"],
+  },
+];
+
+window.WONING_DATA = [
+  {
+    id: "villa-appartement",
+    titel: "Appartementen in de villa (nu 5)",
+    type: "huidig",
+    oppervlakteMin: 45,
+    oppervlakteMax: 60,
+    kamers: "2 kamers",
+    slaapkamersMin: 1,
+    slaapkamersMax: 1,
+    verdieping: "Hoofdgebouw",
+    status: "In voorbereiding",
+    omschrijving:
+      "De huidige opzet gaat uit van vijf zelfstandige appartementen met eigen badkamer en pantry, plus gedeelde woonkamer en keuken.",
+    image:
+      "https://images.realworks.nl/servlets/images/media.objectmedia/198111199.jpg?portalid=4286&check=api_sha256%3a5c4e30a583c1350d336579c12a7552ae5c8e7c22ba5d54dda83f93b4aa2f7379&=20241204083948&width=2160&height=1440",
+    imageAlt: "Vooraanzicht van de villa waar de eerste 5 appartementen worden voorzien.",
+    ctaVoorkeur: "Huidige opzet (5 appartementen)",
+    ctaWoningtype: "Villa-appartement",
+  },
+  {
+    id: "compacte-tuinunit",
+    titel: "Compactere tuinunits (verkenning)",
+    type: "verkenning",
+    oppervlakteMin: 25,
+    oppervlakteMax: 40,
+    kamers: "1-2 kamers",
+    slaapkamersMin: 0,
+    slaapkamersMax: 1,
+    verdieping: "Mogelijk in de achtertuin",
+    status: "Alleen bij aantoonbare vraag",
+    omschrijving:
+      "Met bewoners en belangstellenden onderzoeken we of kleinere units in de tuin gewenst en passend zijn.",
+    image:
+      "https://images.realworks.nl/servlets/images/media.objectmedia/198111243.jpg?portalid=4286&check=api_sha256%3a44f16d40571319d48a70b8d164e5b0610ede4b6154005b40e6f1f4a9250aafc7&v=20241204083948&width=2160&height=1440",
+    imageAlt: "Grote tuin rondom de villa met ruimte voor mogelijke uitbreiding.",
+    ctaVoorkeur: "Uitbreiding wordt onderzocht",
+    ctaWoningtype: "Compactere tuinunit (verkenning)",
+  },
+  {
+    id: "ruimer-villa-appartement",
+    titel: "Ruimere woonopties (verkenning)",
+    type: "verkenning",
+    oppervlakteMin: 50,
+    oppervlakteMax: 60,
+    kamers: "2-3 kamers",
+    slaapkamersMin: 1,
+    slaapkamersMax: 2,
+    verdieping: "Nog te bepalen",
+    status: "Scenario in onderzoek",
+    omschrijving:
+      "Naast compacte varianten onderzoeken we ook of er behoefte is aan iets ruimere appartementen binnen een totaal van 5 tot 10 woningen.",
+    image:
+      "https://images.realworks.nl/servlets/images/media.objectmedia/198111233.jpg?portalid=4286&check=api_sha256%3a337d9da8f7b634177ba18ef47ab84cb31c9200eb3e6bebdf8bbea9a1035b00d2&v=20241204083948&width=2160&height=1440",
+    imageAlt: "Interieurbeeld als referentie voor ruimere woonopzet.",
+    ctaVoorkeur: "Uitbreiding wordt onderzocht",
+    ctaWoningtype: "Ruimere woonoptie (verkenning)",
+  },
+];
+
+window.IN_DE_BUURT_DATA = [
+  "Historisch centrum van Hattem op korte fietsafstand",
+  "Dagelijkse voorzieningen en horeca in de directe omgeving",
+  "Snel bereikbare verbinding met Zwolle en regio",
+  "Groene omgeving met rust en ruimte voor wandelen",
+];

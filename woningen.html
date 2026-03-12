@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Woonvarianten | Knarre Krasse Woning</title>
+  <meta name="description" content="Overzicht van huidige en mogelijke woonvarianten op Eijerdijk 87 in Hattem, met ruimte voor inspraak over uitbreiding.">
+  <meta property="og:title" content="Woonvarianten | Knarre Krasse Woning">
+  <meta property="og:description" content="Indicatieve woonrichtingen: nu 5 appartementen, met verkenning naar meerdere varianten.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.knarrekrassewoning.nl/woningen.html">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div data-site-header></div>
+  <main id="main-content" class="container">
+    <section>
+      <h1>Woonvarianten</h1>
+      <p class="lead">Deze varianten zijn bedoeld om woonwensen op te halen. De huidige opzet is 5 appartementen; aanvullende varianten worden alleen verder uitgewerkt als daar aantoonbare behoefte aan is.</p>
+    </section>
+
+    <section class="filter-bar" aria-label="Woningfilter">
+      <form class="form-grid" data-filter-form>
+        <label>Fase
+          <select name="type">
+            <option value="alle">Alle</option>
+            <option value="huidig">Huidige opzet (nu 5)</option>
+            <option value="verkenning">Verkenning</option>
+          </select>
+        </label>
+        <label>Maximale m²
+          <select name="m2">
+            <option value="9999">Geen voorkeur</option>
+            <option value="40">Tot 40 m²</option>
+            <option value="50">Tot 50 m²</option>
+            <option value="60">Tot 60 m²</option>
+          </select>
+        </label>
+        <label>Minimaal slaapkamers
+          <select name="slaapkamers">
+            <option value="0">Geen voorkeur</option>
+            <option value="1">Minimaal 1</option>
+            <option value="2">Minimaal 2</option>
+          </select>
+        </label>
+      </form>
+      <p class="helper" data-filter-result aria-live="polite"></p>
+    </section>
+
+    <section class="section">
+      <div class="grid grid-2" data-woningen-overview></div>
+    </section>
+  </main>
+  <div data-site-footer></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
