@@ -1,4 +1,4 @@
-baseURL = "https://huizekalverveen.nl/"
+baseURL = "https://hetkalverveen.nl/"
 languageCode = "nl"
 title = "'t Kalverveen"
 copyright = "'t Kalverveen — Eijerdijk 87, Hattem"
@@ -8,7 +8,7 @@ copyright = "'t Kalverveen — Eijerdijk 87, Hattem"
   email = "info@huizekalverveen.nl"
   address = "Eijerdijk 87, 8051 XX Hattem"
   ogImage = "/images/villa-voorzijde.jpg"
-  domainAlt = "hetkalverveen.nl"
+  domainAlt = "huizekalverveen.nl"
 
 [menu]
   [[menu.main]]

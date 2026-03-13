@@ -94,18 +94,24 @@ De site is nu live op een Netlify-URL (bijv. `random-naam.netlify.app`).
 ### Stap 4 — Custom domein instellen
 
 1. In Netlify: ga naar **Domain management** → **Add custom domain**
-2. Vul in: `huizekalverveen.nl`
-3. Bij je domeinregistrar: voeg een **DNS-record** toe:
-   - Type: `CNAME`
-   - Naam: `www`
-   - Waarde: `jouw-site.netlify.app`
+2. Vul in: `hetkalverveen.nl`
+3. Bij je domeinregistrar: zet de DNS van dit domein naar Netlify.
+   - Als de registrar alleen `TXT`, `CNAME` of `A` aanbiedt: kies voor het hoofddomein (`hetkalverveen.nl`) een `A`-record
+   - Host/naam: `@`
+   - Waarde: `75.2.60.5`
+   - Voor `www.hetkalverveen.nl` gebruik je meestal een `CNAME` naar `kalverveen.netlify.app`
+   - Als je registrar `ALIAS`, `ANAME` of flattened `CNAME` ondersteunt, is dat voor het hoofddomein nog netter dan een `A`-record
    - **OF** gebruik Netlify DNS (dan wijs je de nameservers van je domein naar Netlify)
 4. Netlify regelt automatisch HTTPS (Let's Encrypt)
 
-### Stap 5 — hetkalverveen.nl redirect
+### Stap 5 — huizekalverveen.nl redirect
 
-1. In Netlify: voeg ook `hetkalverveen.nl` toe als domein
-2. Netlify redirect automatisch naar het primaire domein
+1. In Netlify: voeg ook `huizekalverveen.nl` toe als domein
+2. Ook dit domein moet met DNS naar Netlify wijzen, anders kan Netlify de redirect niet uitvoeren
+3. Als de registrar alleen `TXT`, `CNAME` of `A` aanbiedt: gebruik voor `huizekalverveen.nl` ook een `A`-record met host `@` en waarde `75.2.60.5`
+4. Voor `www.huizekalverveen.nl` kun je een `CNAME` gebruiken naar `kalverveen.netlify.app`
+5. Zodra Netlify dit domein ontvangt, redirect het automatisch naar het primaire domein `hetkalverveen.nl`
+6. Hiervoor is geen aparte `_redirects`-regel nodig
 
 ### Klaar!
 
@@ -136,7 +142,7 @@ Elke `git push` naar `main` triggert automatisch een nieuwe deploy (~10 seconden
 
 ### Stap 4 — Inloggen op het CMS
 
-1. Ga naar `https://huizekalverveen.nl/admin/`
+1. Ga naar `https://hetkalverveen.nl/admin/`
 2. Log in met het e-mailadres en wachtwoord uit stap 3
 3. Je ziet nu een overzicht van alle pagina's en secties
 
@@ -154,7 +160,7 @@ Elke `git push` naar `main` triggert automatisch een nieuwe deploy (~10 seconden
 
 ### Hoe werkt het?
 
-1. Open `huizekalverveen.nl/admin/`
+1. Open `hetkalverveen.nl/admin/`
 2. Kies de pagina die je wilt bewerken
 3. Pas tekst, foto's of FAQ-items aan
 4. Klik **Publiceren**
@@ -258,8 +264,8 @@ website Ellen/
 
 | Domein | Rol |
 |--------|-----|
-| **huizekalverveen.nl** | Primair domein |
-| **hetkalverveen.nl** | Redirect naar primair |
+| **hetkalverveen.nl** | Primair domein |
+| **huizekalverveen.nl** | Redirect naar primair |
 
 ---
 
