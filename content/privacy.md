@@ -1,6 +1,7 @@
 ---
 title: "Privacy"
 description: "Hoe 't Kalverveen omgaat met uw gegevens."
+type: "privacy"
 ---
 
 ## Privacyverklaring

@@ -1,0 +1,38 @@
+{{ define "main" }}
+{{ $pageFile := printf "content/%s" .File.Path }}
+<section class="hero hero-compact">
+  <div class="container container-text">
+    <h1 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "title") }}>{{ .Title }}</h1>
+    <p class="lead" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "subtitle") }}>{{ .Params.subtitle }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-text">
+    <div {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "markdown_content") }}>{{ .Content }}</div>
+  </div>
+</section>
+
+{{ with .Params.fotos }}
+<section class="section section-alt" aria-label="Sfeerbeelden van het pand">
+  <div class="container">
+    <div class="gallery">
+      {{ range $index, $image := . }}
+      <figure class="gallery-item" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "fotos.%d" $index)) }}>
+        <img src="{{ $image.afbeelding }}" alt="{{ $image.alt }}" width="600" height="400" loading="lazy" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "fotos.%d.afbeelding" $index)) }}>
+        {{ with $image.bijschrift }}<figcaption {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "fotos.%d.bijschrift" $index)) }}>{{ . }}</figcaption>{{ end }}
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="cta-section">
+  <div class="container container-text" style="text-align:center">
+    <h2>Op de hoogte blijven?</h2>
+    <p class="lead">Laat uw gegevens achter en wij informeren u zodra er meer bekend is over de woningen.</p>
+    <a href="/interesse/" class="btn btn-primary">Interesse doorgeven</a>
+  </div>
+</section>
+{{ end }}

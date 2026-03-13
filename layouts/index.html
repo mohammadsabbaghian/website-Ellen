@@ -1,12 +1,13 @@
 {{ define "main" }}
+{{ $pageFile := printf "content/%s" .File.Path }}
 
 <!-- Hero -->
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-text">
-      {{ with .Params.hero_kicker }}<p class="hero-kicker">{{ . }}</p>{{ end }}
-      <h1>{{ .Params.hero_title | default .Title }}</h1>
-      <p class="lead">{{ .Params.hero_subtitle }}</p>
+      {{ with .Params.hero_kicker }}<p class="hero-kicker" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "hero_kicker") }}>{{ . }}</p>{{ end }}
+      <h1 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "hero_title") }}>{{ .Params.hero_title | default .Title }}</h1>
+      <p class="lead" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "hero_subtitle") }}>{{ .Params.hero_subtitle }}</p>
       <div class="hero-actions">
         <a href="/interesse/" class="btn btn-primary">Plan een kennismaking</a>
         <a href="/over/" class="btn btn-secondary">Meer over 't Kalverveen</a>
@@ -24,10 +25,10 @@
 <section class="facts" aria-label="Kernpunten">
   <div class="container">
     <div class="fact-grid">
-      {{ range .Params.feiten }}
-      <div class="fact">
-        <strong>{{ .titel }}</strong>
-        <span>{{ .tekst }}</span>
+      {{ range $index, $fact := .Params.feiten }}
+      <div class="fact" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "feiten.%d" $index)) }}>
+        <strong {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "feiten.%d.titel" $index)) }}>{{ $fact.titel }}</strong>
+        <span {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "feiten.%d.tekst" $index)) }}>{{ $fact.tekst }}</span>
       </div>
       {{ end }}
     </div>
@@ -37,8 +38,8 @@
 <!-- Over kort -->
 <section class="section">
   <div class="container container-text">
-    <h2>{{ .Params.over_titel }}</h2>
-    {{ .Params.over_tekst | markdownify }}
+    <h2 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "over_titel") }}>{{ .Params.over_titel }}</h2>
+    <div {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "over_tekst") }}>{{ .Params.over_tekst | markdownify }}</div>
   </div>
 </section>
 
@@ -47,19 +48,19 @@
 <section class="section section-alt" aria-labelledby="highlights-title">
   <div class="container">
     <div class="container-text section-heading">
-      <h2 id="highlights-title">{{ $.Params.highlights_titel }}</h2>
-      {{ with $.Params.highlights_intro }}<p class="lead">{{ . }}</p>{{ end }}
+      <h2 id="highlights-title" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "highlights_titel") }}>{{ $.Params.highlights_titel }}</h2>
+      {{ with $.Params.highlights_intro }}<p class="lead" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "highlights_intro") }}>{{ . }}</p>{{ end }}
     </div>
     <div class="highlight-grid">
-      {{ range . }}
-      <article class="highlight-card">
-        {{ with .label }}<p class="highlight-label">{{ . }}</p>{{ end }}
-        <h3>{{ .titel }}</h3>
-        <p>{{ .tekst }}</p>
-        {{ with .items }}
+      {{ range $index, $highlight := . }}
+      <article class="highlight-card" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "highlights.%d" $index)) }}>
+        {{ with $highlight.label }}<p class="highlight-label" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "highlights.%d.label" $index)) }}>{{ . }}</p>{{ end }}
+        <h3 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "highlights.%d.titel" $index)) }}>{{ $highlight.titel }}</h3>
+        <p {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "highlights.%d.tekst" $index)) }}>{{ $highlight.tekst }}</p>
+        {{ with $highlight.items }}
         <div class="highlight-pills">
-          {{ range . }}
-          <span class="highlight-pill">{{ . }}</span>
+          {{ range $itemIndex, $item := . }}
+          <span class="highlight-pill" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "highlights.%d.items.%d" $index $itemIndex)) }}>{{ $item }}</span>
           {{ end }}
         </div>
         {{ end }}
@@ -73,12 +74,12 @@
 <!-- Fotogalerij -->
 <section class="section section-alt" aria-label="Sfeerbeelden">
   <div class="container">
-    <h2>{{ .Params.galerij_titel | default "Het pand en de tuin" }}</h2>
+    <h2 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "galerij_titel") }}>{{ .Params.galerij_titel | default "Het pand en de tuin" }}</h2>
     <div class="gallery">
-      {{ range .Params.galerij }}
-      <figure class="gallery-item">
-        <img src="{{ .afbeelding }}" alt="{{ .alt }}" width="600" height="400" loading="lazy">
-        {{ with .bijschrift }}<figcaption>{{ . }}</figcaption>{{ end }}
+      {{ range $index, $image := .Params.galerij }}
+      <figure class="gallery-item" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "galerij.%d" $index)) }}>
+        <img src="{{ $image.afbeelding }}" alt="{{ $image.alt }}" width="600" height="400" loading="lazy" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "galerij.%d.afbeelding" $index)) }}>
+        {{ with $image.bijschrift }}<figcaption {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "galerij.%d.bijschrift" $index)) }}>{{ . }}</figcaption>{{ end }}
       </figure>
       {{ end }}
     </div>
@@ -88,19 +89,32 @@
 <!-- Welzijn -->
 <section class="section">
   <div class="container container-text">
-    <h2>{{ .Params.welzijn_titel }}</h2>
-    {{ .Params.welzijn_tekst | markdownify }}
+    <h2 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "welzijn_titel") }}>{{ .Params.welzijn_titel }}</h2>
+    <div {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "welzijn_tekst") }}>{{ .Params.welzijn_tekst | markdownify }}</div>
   </div>
 </section>
 
 <!-- Locatie -->
 <section class="section section-alt">
   <div class="container container-text">
-    <h2>{{ .Params.locatie_titel }}</h2>
-    {{ .Params.locatie_tekst | markdownify }}
+    <h2 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "locatie_titel") }}>{{ .Params.locatie_titel }}</h2>
+    <div {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "locatie_tekst") }}>{{ .Params.locatie_tekst | markdownify }}</div>
     <a href="https://www.google.com/maps/place/Eijerdijk+87,+8051+XX+Hattem" target="_blank" rel="noopener" class="btn btn-secondary">Bekijk op de kaart</a>
   </div>
 </section>
+
+<!-- Zoekintentie -->
+{{ with .Params.zoekvraag_titel }}
+<section class="section">
+  <div class="container container-text">
+    <div class="orientation-card">
+      <p class="highlight-label">Orientatie</p>
+      <h2 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "zoekvraag_titel") }}>{{ . }}</h2>
+      <div {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "zoekvraag_tekst") }}>{{ $.Params.zoekvraag_tekst | markdownify }}</div>
+    </div>
+  </div>
+</section>
+{{ end }}
 
 <!-- FAQ -->
 {{ with .Params.faq }}
@@ -108,10 +122,10 @@
   <div class="container container-text">
     <h2>Veelgestelde vragen</h2>
     <div class="faq-list">
-      {{ range . }}
-      <details class="faq-item">
-        <summary>{{ .vraag }}</summary>
-        <div class="faq-answer">{{ .antwoord | markdownify }}</div>
+      {{ range $index, $faq := . }}
+      <details class="faq-item" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "faq.%d" $index)) }}>
+        <summary {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "faq.%d.vraag" $index)) }}>{{ $faq.vraag }}</summary>
+        <div class="faq-answer" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" (printf "faq.%d.antwoord" $index)) }}>{{ $faq.antwoord | markdownify }}</div>
       </details>
       {{ end }}
     </div>
@@ -122,8 +136,8 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="container container-text" style="text-align:center">
-    <h2>{{ .Params.cta_titel | default "Interesse?" }}</h2>
-    <p class="lead">{{ .Params.cta_tekst | default "Laat uw gegevens achter en wij nemen contact met u op." }}</p>
+    <h2 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "cta_titel") }}>{{ .Params.cta_titel | default "Interesse?" }}</h2>
+    <p class="lead" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "cta_tekst") }}>{{ .Params.cta_tekst | default "Laat uw gegevens achter en wij nemen contact met u op." }}</p>
     <div class="hero-actions" style="justify-content:center">
       <a href="/interesse/" class="btn btn-primary">Ontvang informatie</a>
       <a href="/contact/" class="btn btn-secondary">Contact opnemen</a>

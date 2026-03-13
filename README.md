@@ -6,6 +6,7 @@ Website voor **'t Kalverveen**: kleinschalig en zelfstandig wonen in een villa i
 |-----------|-------------|--------|
 | Site-generator | [Hugo](https://gohugo.io/) | Snel, geen database, gratis |
 | Content-beheer | [Decap CMS](https://decapcms.org/) | Visueel bewerken in de browser |
+| Visual editing | [Netlify Visual Editor](https://docs.netlify.com/visual-editor/) | Inline bewerken in Netlify |
 | Hosting | [Netlify](https://netlify.com/) | Gratis, auto-deploy, formulieren ingebouwd |
 
 ---
@@ -170,7 +171,61 @@ Elke `git push` naar `main` triggert automatisch een nieuwe deploy (~10 seconden
 
 ---
 
-## 4. Content bewerken via bestanden
+## 4. Netlify Visual Editor
+
+> Deze repo is nu voorbereid voor Netlify Visual Editor, naast Decap CMS.
+
+### Wat is al ingericht?
+
+- `stackbit.config.ts` staat in de repo-root
+- contentmodellen voor homepage en vaste pagina's zijn toegevoegd
+- templates bevatten inline annotaties voor Visual Editor
+- de Hugo-setup reageert op contentwijzigingen vanuit Visual Editor
+
+### Lokaal gebruiken
+
+1. Installeer Node.js 18 of nieuwer
+2. Installeer dependencies:
+
+```bash
+npm install
+```
+
+3. Start de Visual Editor:
+
+```bash
+npm run visual-editor
+```
+
+Dit start lokaal de Stackbit-devserver en gebruikt de Hugo-config uit `stackbit.config.ts`.
+
+4. Open daarna:
+
+```text
+http://localhost:8090/_stackbit
+```
+
+5. Alleen als je los de gewone site wilt bekijken zonder Visual Editor, gebruik je:
+
+```bash
+npm run dev
+```
+
+### In Netlify gebruiken
+
+1. Zorg dat de site gekoppeld is aan deze Git-repo
+2. Open in Netlify de Visual Editor / Create setup voor deze site
+3. Netlify leest automatisch `stackbit.config.ts`
+4. De homepage en vaste pagina's zijn dan inline te bewerken
+
+### Belangrijk
+
+- Decap CMS en Netlify Visual Editor kunnen naast elkaar blijven bestaan
+- Voor vaste pagina's zijn type-velden nu expliciet vastgezet, zodat Hugo en Visual Editor dezelfde contentstructuur gebruiken
+
+---
+
+## 5. Content bewerken via bestanden
 
 > Voor wie liever direct in de bestanden werkt.
 
@@ -202,7 +257,7 @@ Na wijzigen: `git add . && git commit -m "Tekst aangepast" && git push`
 
 ---
 
-## 5. Foto's beheren
+## 6. Foto's beheren
 
 ### Toevoegen
 
@@ -229,7 +284,7 @@ In het admin-paneel kun je foto's uploaden bij de galerij-secties. Ze worden aut
 
 ---
 
-## 6. Formulieren
+## 7. Formulieren
 
 Formulieren (interesse + contact) worden afgehandeld door **Netlify Forms**.
 

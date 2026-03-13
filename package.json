@@ -1,0 +1,14 @@
+{
+  "name": "kalverveen-site",
+  "private": true,
+  "scripts": {
+    "build": "hugo --gc --minify",
+    "dev": "hugo server --bind 0.0.0.0 --port 1313",
+    "visual-editor": "stackbit dev"
+  },
+  "devDependencies": {
+    "@stackbit/cli": "0.3.135",
+    "@stackbit/cms-git": "1.0.37",
+    "@stackbit/types": "2.1.15"
+  }
+}

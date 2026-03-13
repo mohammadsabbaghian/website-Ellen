@@ -16,6 +16,7 @@ collections:
         label: "Homepage"
         file: "content/_index.md"
         fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "home" }
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
           - { label: "Hero kicker", name: "hero_kicker", widget: "string", required: false }
@@ -52,6 +53,8 @@ collections:
               - { label: "Bijschrift", name: "bijschrift", widget: "string", required: false }
           - { label: "Welzijn titel", name: "welzijn_titel", widget: "string" }
           - { label: "Welzijn tekst", name: "welzijn_tekst", widget: "markdown" }
+          - { label: "Zoekvraag titel", name: "zoekvraag_titel", widget: "string" }
+          - { label: "Zoekvraag tekst", name: "zoekvraag_tekst", widget: "markdown" }
           - { label: "Locatie titel", name: "locatie_titel", widget: "string" }
           - { label: "Locatie tekst", name: "locatie_tekst", widget: "markdown" }
           - label: "FAQ"
@@ -71,6 +74,7 @@ collections:
         label: "Over 't Kalverveen"
         file: "content/over.md"
         fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "over" }
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
           - { label: "Inhoud", name: "body", widget: "markdown" }
@@ -79,6 +83,8 @@ collections:
         label: "Woningen"
         file: "content/woningen.md"
         fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "woningen" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "woningen" }
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
           - { label: "Subtitel", name: "subtitle", widget: "string" }
@@ -95,6 +101,8 @@ collections:
         label: "Interesse-pagina"
         file: "content/interesse.md"
         fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "interesse" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "interesse" }
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
           - { label: "Introductie", name: "body", widget: "markdown" }
@@ -103,6 +111,8 @@ collections:
         label: "Contact"
         file: "content/contact.md"
         fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "contact" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "contact" }
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
           - { label: "Inhoud", name: "body", widget: "markdown" }
@@ -111,6 +121,7 @@ collections:
         label: "Privacy"
         file: "content/privacy.md"
         fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "privacy" }
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Inhoud", name: "body", widget: "markdown" }
 
@@ -118,5 +129,6 @@ collections:
         label: "Bedankpagina"
         file: "content/dank.md"
         fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "dank" }
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Inhoud", name: "body", widget: "markdown" }

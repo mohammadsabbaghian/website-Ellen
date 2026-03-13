@@ -1,0 +1,3 @@
+{{- $objectId := .objectId -}}
+{{- $fieldPath := .fieldPath -}}
+{{- printf "data-sb-object-id=%q data-sb-field-path=%q" $objectId $fieldPath | safeHTMLAttr -}}

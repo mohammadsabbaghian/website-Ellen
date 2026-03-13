@@ -1,6 +1,7 @@
 ---
 title: "Bedankt voor uw bericht"
 description: "Wij hebben uw bericht ontvangen."
+type: "dank"
 ---
 
 ## Bedankt!

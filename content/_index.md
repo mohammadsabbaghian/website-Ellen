@@ -1,6 +1,7 @@
 ---
 title: "'t Kalverveen — Hoogwaardig zelfstandig wonen in Hattem"
-description: "Hoogwaardig zelfstandig wonen voor actieve senioren in Hattem, in een karaktervolle villa met tuin, rust en comfort."
+description: "Hoogwaardig zelfstandig wonen voor actieve senioren in Hattem, nabij Zwolle, in een karaktervolle villa met tuin, rust en comfort."
+type: "home"
 hero_kicker: "Hoogwaardig wonen voor actieve senioren"
 hero_title: "Luxe en zelfstandig wonen, in alle rust"
 hero_subtitle: "'t Kalverveen brengt hoogwaardige appartementen samen in een karaktervolle villa in Hattem. Een eigen plek, veel privacy en de mogelijkheid tot ontmoeting — stijlvol, rustig en op uw eigen tempo."
@@ -83,6 +84,12 @@ welzijn_tekst: |
 
   Zo blijft het dagelijks leven herkenbaar en eigen, terwijl gemak, aandacht en gezelligheid dichtbij kunnen zijn. Er is geen zorgindicatie nodig.
 
+zoekvraag_titel: "Oriënteert u zich op seniorenwonen in Hattem of regio Zwolle?"
+zoekvraag_tekst: |
+  Veel mensen zoeken eerst breed, met termen als **knarrenhof Hattem**, **knarrenhof Zwolle**, **seniorenappartementen Hattem** of **luxe senioren wonen nabij Zwolle**. 't Kalverveen sluit aan bij die behoefte aan zelfstandigheid, nabijheid en ontmoeting, maar doet dat in een andere sfeer.
+
+  Geen groot hofjesproject, maar een **kleinschalige villa-omgeving** met een meer private, rustige en hoogwaardige uitstraling. Juist voor wie zoekt naar comfort, overzicht en kwaliteit van leven, kan dat een passend alternatief zijn.
+
 locatie_titel: "De locatie"
 locatie_tekst: |
   De villa ligt aan de rustige Eijerdijk in Hattem, op loopafstand van het centrum. De omgeving biedt:
@@ -95,6 +102,8 @@ locatie_tekst: |
 faq:
   - vraag: "Voor wie is 't Kalverveen bedoeld?"
     antwoord: "Voor actieve 65-plussers die zelfstandig willen wonen in een sociale, kleinschalige setting. U bent welkom als toekomstige bewoner, of als familielid dat meedenkt."
+  - vraag: "Is 't Kalverveen vergelijkbaar met een knarrenhof in Hattem of Zwolle?"
+    antwoord: "Wie zoekt op termen als knarrenhof Hattem of knarrenhof Zwolle, zoekt vaak naar zelfstandig seniorenwonen met nabijheid en ontmoeting. 't Kalverveen is geen hofjesconcept, maar een kleinschalige woonomgeving in een villa, met meer privacy, rust en een hoogwaardige uitstraling."
   - vraag: "Moet ik een zorgindicatie hebben?"
     antwoord: "Nee. 't Kalverveen is gericht op zelfstandig wonen. Ondersteuning is organiseerbaar, maar er is geen zorgverplichting."
   - vraag: "Zijn de woningen al beschikbaar?"

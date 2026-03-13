@@ -1,3 +1,18 @@
 {{ define "main" }}
-  {{ .Content }}
+  {{ $pageFile := printf "content/%s" .File.Path }}
+  <section class="hero hero-compact prose-hero">
+    <div class="container container-text prose-hero-inner">
+      <p class="hero-kicker">{{ if eq .Type "privacy" }}Privacy en gegevens{{ else if eq .Type "dank" }}Bericht ontvangen{{ else }}Meer over 't Kalverveen{{ end }}</p>
+      <h1 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "title") }}>{{ .Title }}</h1>
+      {{ with .Description }}<p class="lead" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "description") }}>{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  <section class="section prose-page-section">
+    <div class="container prose-shell">
+      <article class="prose-card">
+        <div class="prose-content" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "markdown_content") }}>{{ .Content }}</div>
+      </article>
+    </div>
+  </section>
 {{ end }}

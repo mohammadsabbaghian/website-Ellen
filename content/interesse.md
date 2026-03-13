@@ -1,7 +1,7 @@
 ---
 title: "Interesse"
 description: "Meld uw interesse voor 't Kalverveen. Wij nemen contact met u op."
-type: "page"
+type: "interesse"
 layout: "interesse"
 ---
 

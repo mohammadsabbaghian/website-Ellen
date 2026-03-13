@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 description: "Neem contact op met 't Kalverveen."
-type: "page"
+type: "contact"
 layout: "contact"
 ---
 

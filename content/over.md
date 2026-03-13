@@ -1,6 +1,7 @@
 ---
 title: "Over 't Kalverveen"
-description: "Het verhaal achter 't Kalverveen: hoogwaardige seniorenappartementen in Hattem, kleinschalig wonen met comfort, rust en privacy."
+description: "Het verhaal achter 't Kalverveen: hoogwaardige seniorenappartementen in Hattem, nabij Zwolle, kleinschalig wonen met comfort, rust en privacy."
+type: "over"
 layout: "single"
 ---
 
@@ -28,6 +29,8 @@ Wij geloven in:
 - **Comfort**: een woonomgeving die rust, kwaliteit en overzicht biedt
 - **Geen overbodige zorg**: ondersteuning is organiseerbaar, maar niet verplicht
 - **Meedenken**: de invulling van 't Kalverveen ontwikkelen we samen met geïnteresseerden
+
+Voor mensen die zich oriënteren op een **knarrenhof in Hattem** of een **knarrenhof nabij Zwolle**, biedt 't Kalverveen een andere woonvorm: minder collectief van opzet, maar juist rijk aan privacy, kwaliteit en rust. De behoefte is vaak vergelijkbaar, de uitstraling en woonbeleving zijn duidelijk eigen.
 
 ## Wie zit erachter?
 

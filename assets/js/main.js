@@ -12,4 +12,8 @@
       nav.classList.toggle("is-open", !open);
     });
   }
+
+  window.addEventListener("stackbitObjectsChanged", function () {
+    window.location.reload();
+  });
 })();

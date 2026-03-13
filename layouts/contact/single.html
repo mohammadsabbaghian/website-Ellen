@@ -1,0 +1,47 @@
+{{ define "main" }}
+{{ $pageFile := printf "content/%s" .File.Path }}
+<section class="section">
+  <div class="container container-text">
+    <h1 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "title") }}>{{ .Title }}</h1>
+    <div {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "markdown_content") }}>{{ .Content }}</div>
+
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/dank/">
+      <p class="visually-hidden">
+        <label>Niet invullen: <input name="bot-field"></label>
+      </p>
+
+      <div class="form-group">
+        <label for="naam">Naam <span aria-hidden="true">*</span></label>
+        <input type="text" id="naam" name="naam" required autocomplete="name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mailadres <span aria-hidden="true">*</span></label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label for="telefoon">Telefoonnummer</label>
+        <input type="tel" id="telefoon" name="telefoon" autocomplete="tel">
+      </div>
+
+      <div class="form-group">
+        <label for="onderwerp">Onderwerp</label>
+        <select id="onderwerp" name="onderwerp">
+          <option value="Algemeen">Algemeen</option>
+          <option value="Interesse in wonen">Interesse in wonen</option>
+          <option value="Samenwerking">Samenwerking</option>
+          <option value="Anders">Anders</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="bericht">Uw bericht <span aria-hidden="true">*</span></label>
+        <textarea id="bericht" name="bericht" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-submit">Verstuur bericht</button>
+    </form>
+  </div>
+</section>
+{{ end }}
