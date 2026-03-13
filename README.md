@@ -34,9 +34,9 @@ Je zou iets moeten zien als `hugo v0.157.0...extended`.
 
 ### Stap 2 — Repo openen
 
-Open de map `kalverveen` in VS Code (of een andere editor):
+Open deze repo-root in VS Code (of een andere editor):
 ```bash
-cd pad/naar/kalverveen
+cd pad/naar/website\ Ellen
 ```
 
 ### Stap 3 — Server starten
@@ -62,13 +62,13 @@ Druk op `Ctrl + C` in de terminal.
 ### Stap 1 — GitHub-repo aanmaken
 
 1. Ga naar [github.com/new](https://github.com/new)
-2. Naam: `kalverveen` (of `huizekalverveen.nl`)
+2. Naam: `huizekalverveen.nl` of `kalverveen`
 3. **Private** aanvinken
 4. Klik **Create repository**
 
 ### Stap 2 — Code pushen
 
-Vanuit de `kalverveen`-map:
+Vanuit de repo-root:
 ```bash
 git init
 git add .
@@ -82,8 +82,9 @@ git push -u origin main
 
 1. Ga naar [app.netlify.com](https://app.netlify.com/)
 2. Klik **Add new site** → **Import an existing project**
-3. Kies **GitHub** en selecteer de `kalverveen`-repo
-4. Netlify vult automatisch in:
+3. Kies **GitHub** en selecteer de repo
+4. Netlify moet invullen:
+   - **Base directory:** leeg laten
    - **Build command:** `hugo`
    - **Publish directory:** `public`
 5. Klik **Deploy site**
@@ -235,7 +236,7 @@ Geen extra configuratie nodig — werkt automatisch na deploy.
 ## Projectstructuur
 
 ```
-kalverveen/
+website Ellen/
 ├── content/          ← Teksten (Markdown)
 ├── layouts/          ← HTML-templates
 │   ├── _default/     ← Standaard layout
