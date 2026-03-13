@@ -1,0 +1,105 @@
+{{ define "main" }}
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>{{ .Params.hero_title | default .Title }}</h1>
+      <p class="lead">{{ .Params.hero_subtitle }}</p>
+      <div class="hero-actions">
+        <a href="/interesse/" class="btn btn-primary">Interesse? Neem contact op</a>
+        <a href="/over/" class="btn btn-secondary">Meer over 't Kalverveen</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="/images/villa-voorzijde.jpg"
+           alt="Vrijstaande villa aan de Eijerdijk in Hattem"
+           width="960" height="640" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- Kernpunten -->
+<section class="facts" aria-label="Kernpunten">
+  <div class="container">
+    <div class="fact-grid">
+      {{ range .Params.feiten }}
+      <div class="fact">
+        <strong>{{ .titel }}</strong>
+        <span>{{ .tekst }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Over kort -->
+<section class="section">
+  <div class="container container-text">
+    <h2>{{ .Params.over_titel }}</h2>
+    {{ .Params.over_tekst | markdownify }}
+  </div>
+</section>
+
+<!-- Fotogalerij -->
+<section class="section section-alt" aria-label="Sfeerbeelden">
+  <div class="container">
+    <h2>{{ .Params.galerij_titel | default "Het pand en de tuin" }}</h2>
+    <div class="gallery">
+      {{ range .Params.galerij }}
+      <figure class="gallery-item">
+        <img src="{{ .afbeelding }}" alt="{{ .alt }}" width="600" height="400" loading="lazy">
+        {{ with .bijschrift }}<figcaption>{{ . }}</figcaption>{{ end }}
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Welzijn -->
+<section class="section">
+  <div class="container container-text">
+    <h2>{{ .Params.welzijn_titel }}</h2>
+    {{ .Params.welzijn_tekst | markdownify }}
+  </div>
+</section>
+
+<!-- Locatie -->
+<section class="section section-alt">
+  <div class="container container-text">
+    <h2>{{ .Params.locatie_titel }}</h2>
+    {{ .Params.locatie_tekst | markdownify }}
+    <a href="https://www.google.com/maps/place/Eijerdijk+87,+8051+XX+Hattem" target="_blank" rel="noopener" class="btn btn-secondary">Bekijk op de kaart</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+{{ with .Params.faq }}
+<section class="section" id="faq">
+  <div class="container container-text">
+    <h2>Veelgestelde vragen</h2>
+    <div class="faq-list">
+      {{ range . }}
+      <details class="faq-item">
+        <summary>{{ .vraag }}</summary>
+        <div class="faq-answer">{{ .antwoord | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container container-text" style="text-align:center">
+    <h2>{{ .Params.cta_titel | default "Interesse?" }}</h2>
+    <p class="lead">{{ .Params.cta_tekst | default "Laat uw gegevens achter en wij nemen contact met u op." }}</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a href="/interesse/" class="btn btn-primary">Interesse doorgeven</a>
+      <a href="/contact/" class="btn btn-secondary">Contact opnemen</a>
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <strong>'t Kalverveen</strong>
+      <p>{{ site.Params.address }}</p>
+      <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
+    </div>
+    <div class="footer-col">
+      <nav aria-label="Footernavigatie">
+        {{ range site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+        <a href="/privacy/">Privacy</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <p class="footer-copy">&copy; {{ now.Year }} 't Kalverveen</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,108 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images"
+public_folder: "/images"
+
+locale: "nl"
+
+collections:
+  # === Homepage ===
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - name: "home"
+        label: "Homepage"
+        file: "content/_index.md"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
+          - { label: "Hero titel", name: "hero_title", widget: "string" }
+          - { label: "Hero subtitel", name: "hero_subtitle", widget: "text" }
+          - label: "Kernpunten"
+            name: "feiten"
+            widget: "list"
+            fields:
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Tekst", name: "tekst", widget: "string" }
+          - { label: "Over-titel", name: "over_titel", widget: "string" }
+          - { label: "Over-tekst", name: "over_tekst", widget: "markdown" }
+          - { label: "Galerij titel", name: "galerij_titel", widget: "string" }
+          - label: "Galerij"
+            name: "galerij"
+            widget: "list"
+            fields:
+              - { label: "Afbeelding", name: "afbeelding", widget: "image" }
+              - { label: "Alt-tekst", name: "alt", widget: "string" }
+              - { label: "Bijschrift", name: "bijschrift", widget: "string", required: false }
+          - { label: "Welzijn titel", name: "welzijn_titel", widget: "string" }
+          - { label: "Welzijn tekst", name: "welzijn_tekst", widget: "markdown" }
+          - { label: "Locatie titel", name: "locatie_titel", widget: "string" }
+          - { label: "Locatie tekst", name: "locatie_tekst", widget: "markdown" }
+          - label: "FAQ"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Vraag", name: "vraag", widget: "string" }
+              - { label: "Antwoord", name: "antwoord", widget: "markdown" }
+          - { label: "CTA titel", name: "cta_titel", widget: "string" }
+          - { label: "CTA tekst", name: "cta_tekst", widget: "string" }
+
+  # === Pagina's ===
+  - name: "paginas"
+    label: "Pagina's"
+    files:
+      - name: "over"
+        label: "Over 't Kalverveen"
+        file: "content/over.md"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+
+      - name: "woningen"
+        label: "Woningen"
+        file: "content/woningen.md"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
+          - { label: "Subtitel", name: "subtitle", widget: "string" }
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+          - label: "Foto's"
+            name: "fotos"
+            widget: "list"
+            fields:
+              - { label: "Afbeelding", name: "afbeelding", widget: "image" }
+              - { label: "Alt-tekst", name: "alt", widget: "string" }
+              - { label: "Bijschrift", name: "bijschrift", widget: "string", required: false }
+
+      - name: "interesse"
+        label: "Interesse-pagina"
+        file: "content/interesse.md"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
+          - { label: "Introductie", name: "body", widget: "markdown" }
+
+      - name: "contact"
+        label: "Contact"
+        file: "content/contact.md"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+
+      - name: "privacy"
+        label: "Privacy"
+        file: "content/privacy.md"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+
+      - name: "dank"
+        label: "Bedankpagina"
+        file: "content/dank.md"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Inhoud", name: "body", widget: "markdown" }

@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="hero hero-compact">
+  <div class="container container-text">
+    <h1>{{ .Title }}</h1>
+    <p class="lead">{{ .Params.subtitle }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-text">
+    {{ .Content }}
+  </div>
+</section>
+
+{{ with .Params.fotos }}
+<section class="section section-alt" aria-label="Sfeerbeelden van het pand">
+  <div class="container">
+    <div class="gallery">
+      {{ range . }}
+      <figure class="gallery-item">
+        <img src="{{ .afbeelding }}" alt="{{ .alt }}" width="600" height="400" loading="lazy">
+        {{ with .bijschrift }}<figcaption>{{ . }}</figcaption>{{ end }}
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="cta-section">
+  <div class="container container-text" style="text-align:center">
+    <h2>Op de hoogte blijven?</h2>
+    <p class="lead">Laat uw gegevens achter en wij informeren u zodra er meer bekend is over de woningen.</p>
+    <a href="/interesse/" class="btn btn-primary">Interesse doorgeven</a>
+  </div>
+</section>
+{{ end }}

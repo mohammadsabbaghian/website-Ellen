@@ -1,0 +1,94 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container container-text">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+
+    <form name="interesse" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/dank/">
+      <p class="visually-hidden">
+        <label>Niet invullen: <input name="bot-field"></label>
+      </p>
+
+      <fieldset>
+        <legend>Uw gegevens</legend>
+
+        <div class="form-group">
+          <label for="naam">Naam <span aria-hidden="true">*</span></label>
+          <input type="text" id="naam" name="naam" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mailadres <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="telefoon">Telefoonnummer <span aria-hidden="true">*</span></label>
+          <input type="tel" id="telefoon" name="telefoon" required autocomplete="tel">
+        </div>
+
+        <div class="form-group">
+          <label for="rol">Ik ben <span aria-hidden="true">*</span></label>
+          <select id="rol" name="rol" required>
+            <option value="">— Kies —</option>
+            <option value="Mogelijk toekomstige bewoner">Mogelijk toekomstige bewoner</option>
+            <option value="Familie / mantelzorger">Familie / mantelzorger</option>
+            <option value="Professioneel betrokkene">Professioneel betrokkene</option>
+            <option value="Anders">Anders</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="stap">Gewenste volgende stap <span aria-hidden="true">*</span></label>
+          <select id="stap" name="gewenste_stap" required>
+            <option value="">— Kies —</option>
+            <option value="Informatie ontvangen">Informatie ontvangen</option>
+            <option value="Kennismakingsgesprek">Kennismakingsgesprek</option>
+            <option value="Rondleiding">Rondleiding</option>
+            <option value="Bel mij terug">Bel mij terug</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!-- Optioneel blok -->
+      <details class="form-extra">
+        <summary>Optioneel: vertel ons meer over uw woonwensen</summary>
+
+        <div class="form-group">
+          <label for="woningvoorkeur">Voorkeur woningtype</label>
+          <select id="woningvoorkeur" name="woningvoorkeur">
+            <option value="">— Geen voorkeur —</option>
+            <option value="Appartement in de villa">Appartement in de villa</option>
+            <option value="Compactere woning">Compactere woning</option>
+            <option value="Ruimere woning">Ruimere woning</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="grootte">Gewenste grootte</label>
+          <select id="grootte" name="grootte">
+            <option value="">— Geen voorkeur —</option>
+            <option value="25-40 m²">25–40 m²</option>
+            <option value="40-50 m²">40–50 m²</option>
+            <option value="50-60 m²">50–60 m²</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="toelichting">Toelichting of vragen</label>
+          <textarea id="toelichting" name="toelichting" rows="4"></textarea>
+        </div>
+      </details>
+
+      <div class="form-group form-check">
+        <label>
+          <input type="checkbox" name="privacy" required>
+          Ik ga akkoord met het <a href="/privacy/" target="_blank">privacybeleid</a>.
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-submit">Verstuur mijn interesse</button>
+    </form>
+  </div>
+</section>
+{{ end }}
