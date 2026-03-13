@@ -18,6 +18,7 @@ collections:
         fields:
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
+          - { label: "Hero kicker", name: "hero_kicker", widget: "string", required: false }
           - { label: "Hero titel", name: "hero_title", widget: "string" }
           - { label: "Hero subtitel", name: "hero_subtitle", widget: "text" }
           - label: "Kernpunten"
@@ -28,6 +29,19 @@ collections:
               - { label: "Tekst", name: "tekst", widget: "string" }
           - { label: "Over-titel", name: "over_titel", widget: "string" }
           - { label: "Over-tekst", name: "over_tekst", widget: "markdown" }
+          - { label: "Highlights titel", name: "highlights_titel", widget: "string" }
+          - { label: "Highlights intro", name: "highlights_intro", widget: "text" }
+          - label: "Highlights"
+            name: "highlights"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Tekst", name: "tekst", widget: "text" }
+              - label: "Accentwoorden"
+                name: "items"
+                widget: "list"
+                field: { label: "Accentwoord", name: "item", widget: "string" }
           - { label: "Galerij titel", name: "galerij_titel", widget: "string" }
           - label: "Galerij"
             name: "galerij"

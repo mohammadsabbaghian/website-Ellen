@@ -1,18 +1,18 @@
 ---
 title: "Over 't Kalverveen"
-description: "Het verhaal achter 't Kalverveen: visie op wonen, het pand en wie erachter zit."
+description: "Het verhaal achter 't Kalverveen: hoogwaardige seniorenappartementen in Hattem, kleinschalig wonen met comfort, rust en privacy."
 layout: "single"
 ---
 
 ## Het idee
 
-'t Kalverveen is ontstaan vanuit een simpele overtuiging: **ouder worden hoeft niet te betekenen dat je je zelfstandigheid verliest.** Maar het hoeft ook niet te betekenen dat je alleen woont in een huis dat te groot is geworden.
+'t Kalverveen is ontstaan vanuit een simpele overtuiging: **ouder worden hoeft niet te betekenen dat u inlevert op zelfstandigheid, comfort of stijl.** Maar het hoeft ook niet te betekenen dat u alleen woont in een huis dat te groot is geworden.
 
-In een prachtige villa aan de Eijerdijk in Hattem werken we aan een woonconcept waar bewoners hun eigen leven leiden — met de rust van een eigen appartement en de warmte van een gedeelde tuin en ontmoetingsruimte.
+In een prachtige villa aan de Eijerdijk in Hattem werken we aan een woonconcept waar bewoners hun eigen leven leiden — met de rust van een eigen appartement, de kwaliteit van een hoogwaardige woonomgeving en de warmte van een gedeelde tuin en ontmoetingsruimte.
 
 ## Het pand
 
-De villa is een karaktervol, vrijstaand pand met ruime kamers, veel daglicht en een grote tuin. Het huis ademt sfeer en biedt de perfecte basis voor kleinschalig wonen:
+De villa is een karaktervol, vrijstaand pand met ruime kamers, veel daglicht en een grote tuin. Het huis ademt sfeer en biedt een sterke basis voor hoogwaardig, kleinschalig wonen:
 
 - **Eigen appartementen** met badkamer en pantry
 - **Gedeelde woonkamer en keuken** als ontmoetingsplek
@@ -25,6 +25,7 @@ Wij geloven in:
 
 - **Zelfstandigheid**: uw eigen voordeur, uw eigen ritme
 - **Verbinding**: goede buren, gedeelde momenten — als u dat wilt
+- **Comfort**: een woonomgeving die rust, kwaliteit en overzicht biedt
 - **Geen overbodige zorg**: ondersteuning is organiseerbaar, maar niet verplicht
 - **Meedenken**: de invulling van 't Kalverveen ontwikkelen we samen met geïnteresseerden
 

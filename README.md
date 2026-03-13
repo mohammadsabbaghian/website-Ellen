@@ -101,6 +101,7 @@ De site is nu live op een Netlify-URL (bijv. `random-naam.netlify.app`).
    - Waarde: `75.2.60.5`
    - Voor `www.hetkalverveen.nl` gebruik je meestal een `CNAME` naar `kalverveen.netlify.app`
    - Als je registrar `ALIAS`, `ANAME` of flattened `CNAME` ondersteunt, is dat voor het hoofddomein nog netter dan een `A`-record
+   - Laat de registrar **geen URL forwarding / web forwarding / domein-doorsturing** instellen, want dan ziet de bezoeker `kalverveen.netlify.app` in plaats van `hetkalverveen.nl`
    - **OF** gebruik Netlify DNS (dan wijs je de nameservers van je domein naar Netlify)
 4. Netlify regelt automatisch HTTPS (Let's Encrypt)
 
@@ -112,6 +113,7 @@ De site is nu live op een Netlify-URL (bijv. `random-naam.netlify.app`).
 4. Voor `www.huizekalverveen.nl` kun je een `CNAME` gebruiken naar `kalverveen.netlify.app`
 5. Zodra Netlify dit domein ontvangt, redirect het automatisch naar het primaire domein `hetkalverveen.nl`
 6. Hiervoor is geen aparte `_redirects`-regel nodig
+7. Laat ook hier de registrar alleen DNS instellen, niet een handmatige URL-doorsturing
 
 ### Klaar!
 

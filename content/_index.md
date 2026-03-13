@@ -1,24 +1,54 @@
 ---
-title: "'t Kalverveen — Zelfstandig wonen in Hattem"
-description: "Kleinschalig en zelfstandig wonen in een prachtige villa met grote tuin in Hattem."
-hero_title: "Zelfstandig wonen in een bijzondere villa"
-hero_subtitle: "'t Kalverveen is een kleinschalig woonconcept in een vrijstaande villa met grote tuin aan de Eijerdijk in Hattem. Zelfstandig, maar niet alleen."
+title: "'t Kalverveen — Hoogwaardig zelfstandig wonen in Hattem"
+description: "Hoogwaardig zelfstandig wonen voor actieve senioren in Hattem, in een karaktervolle villa met tuin, rust en comfort."
+hero_kicker: "Hoogwaardig wonen voor actieve senioren"
+hero_title: "Luxe en zelfstandig wonen, in alle rust"
+hero_subtitle: "'t Kalverveen brengt hoogwaardige appartementen samen in een karaktervolle villa in Hattem. Een eigen plek, veel privacy en de mogelijkheid tot ontmoeting — stijlvol, rustig en op uw eigen tempo."
 
 feiten:
-  - titel: "Vrijstaande villa"
-    tekst: "Monumentale uitstraling"
+  - titel: "Hoogwaardige appartementen"
+    tekst: "comfortabel en stijlvol"
+  - titel: "Karaktervolle villa"
+    tekst: "met premium uitstraling"
   - titel: "Grote privétuin"
-    tekst: "Ruimte en rust"
+    tekst: "rust, groen en privacy"
   - titel: "Hattem"
-    tekst: "Rustig, groen, bereikbaar"
-  - titel: "Kleinschalig"
-    tekst: "Persoonlijk en overzichtelijk"
+    tekst: "groen en goed bereikbaar"
 
-over_titel: "Wat is 't Kalverveen?"
+over_titel: "Hoogwaardig wonen met rust en vrijheid"
 over_tekst: |
-  't Kalverveen is een initiatief voor mensen die zelfstandig willen blijven wonen, maar de voordelen van nabuurschap waarderen. In een karaktervolle villa aan de Eijerdijk in Hattem ontstaat een plek waar bewoners hun eigen leven leiden — met de geborgenheid van een gedeelde tuin, ontmoetingsruimte en goede buren.
+  't Kalverveen is een initiatief voor actieve senioren die waarde hechten aan comfort, privacy en kwaliteit van leven. In een karaktervolle villa aan de Eijerdijk in Hattem ontstaat een kleinschalige woonomgeving waar u zelfstandig woont, met de rust van een eigen appartement en de mogelijkheid tot prettig contact dichtbij.
 
-  Het concept is gericht op actieve 65-plussers die op zoek zijn naar een woonvorm die past bij deze levensfase: veilig, comfortabel en sociaal — zonder de nadelen van een groot huis of de anonimiteit van een flat.
+  De ambitie is een hoogwaardige woonplek te creëren die past bij deze levensfase: stijlvol, veilig en comfortabel, zonder de drukte van een groot complex of de lasten van een te ruime woning.
+
+highlights_titel: "Wat u hier mag verwachten"
+highlights_intro: "Drie dingen staan centraal bij 't Kalverveen: zelfstandig wonen, prettig dagelijks leven en ondersteuning die aansluit wanneer dat gewenst is."
+highlights:
+  - label: "Wonen zoals het bij u past"
+    titel: "Uw eigen plek, op uw manier"
+    tekst: "U woont in uw eigen appartement, houdt uw eigen ritme en kiest zelf wanneer u aansluit bij gezamenlijke momenten."
+    items:
+      - "eigen appartement"
+      - "eigen ritme"
+      - "gezamenlijke momenten zijn vrijwillig"
+  - label: "Welzijn en dagelijks leven"
+    titel: "Ontmoeting mag, verplichtingen niet"
+    tekst: "Samen eten, koffie drinken, de tuin in of een kleine activiteit: het dagelijkse leven mag licht, prettig en ongedwongen voelen."
+    items:
+      - "samen eten"
+      - "koffie en ontmoeting"
+      - "tuin en buitenruimte"
+      - "hobby's en kleine activiteiten"
+      - "niets moet, veel kan"
+  - label: "Services"
+    titel: "Praktische hulp dichtbij geregeld"
+    tekst: "Waar gewenst helpen we met gemak in het dagelijks leven, of organiseren we passende ondersteuning via vertrouwde partners."
+    items:
+      - "maaltijden"
+      - "schoonmaak"
+      - "klusjes"
+      - "praktische ondersteuning"
+      - "hulp via partners"
 
 galerij_titel: "Het pand en de tuin"
 galerij:
@@ -47,13 +77,11 @@ galerij:
     alt: "Ruime woonkamer met daglicht"
     bijschrift: "De gezamenlijke woonkamer als hart van ontmoeting."
 
-welzijn_titel: "Welzijn en ondersteuning"
+welzijn_titel: "Dagelijks leven met comfort"
 welzijn_tekst: |
-  - **Zelfstandig wonen** in een eigen appartement met badkamer en pantry
-  - **Gedeelde voorzieningen** zoals woonkamer, keuken en tuin
-  - **Ondersteuning op maat** — van maaltijdservice tot huishoudelijke hulp, organiseerbaar via partners of eigen netwerk
+  't Kalverveen is geen zorgsetting met een vast programma. Het uitgangspunt is hoogwaardig zelfstandig wonen, met ruimte voor rust, ontmoeting en praktische ondersteuning wanneer dat prettig is.
 
-  Er is geen zorgindicatie nodig. 't Kalverveen is bedoeld voor mensen die zelfstandig zijn en dat willen blijven.
+  Zo blijft het dagelijks leven herkenbaar en eigen, terwijl gemak, aandacht en gezelligheid dichtbij kunnen zijn. Er is geen zorgindicatie nodig.
 
 locatie_titel: "De locatie"
 locatie_tekst: |

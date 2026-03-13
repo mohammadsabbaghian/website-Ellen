@@ -1,9 +1,9 @@
 ---
 title: "Woningen"
-description: "De woningen bij 't Kalverveen worden momenteel uitgewerkt. Blijf op de hoogte."
+description: "Hoogwaardige appartementen in voorbereiding bij 't Kalverveen in Hattem. Blijf op de hoogte van de ontwikkeling."
 type: "page"
 layout: "woningen"
-subtitle: "De woningen worden momenteel uitgewerkt."
+subtitle: "Hoogwaardige appartementen in voorbereiding."
 fotos:
   - afbeelding: "/images/villa-voorzijde.jpg"
     alt: "Voorzijde van de villa"
@@ -19,13 +19,13 @@ fotos:
     bijschrift: "Het terrein biedt ruimte voor verschillende woonvormen."
 ---
 
-We werken op dit moment aan de uitwerking van de woningen in en rondom de villa. De precieze indeling, afmetingen en prijzen worden in een later stadium bekendgemaakt.
+We werken op dit moment aan de uitwerking van de woningen in en rondom de villa. De precieze indeling, afmetingen, afwerking en prijzen worden in een later stadium bekendgemaakt.
 
 **Wat we al wel weten:**
 
 - De woningen worden **zelfstandige appartementen** met eigen badkamer en pantry
 - Er komt een **gedeelde woonkamer en keuken** als ontmoetingsruimte
 - De **grote tuin** wordt voor iedereen toegankelijk
-- Het concept is gericht op **kleinschalig en persoonlijk** wonen
+- De ambitie is een **hoogwaardige, rustige en kleinschalige woonomgeving**
 
-Uw input is welkom. Door uw interesse door te geven, denkt u mee over wat belangrijk is in de uitwerking.
+Uw input is welkom. Door uw interesse door te geven, denkt u mee over wat belangrijk is in de uitwerking van deze hoogwaardige appartementen.

@@ -2,13 +2,16 @@ baseURL = "https://hetkalverveen.nl/"
 languageCode = "nl"
 title = "'t Kalverveen"
 copyright = "'t Kalverveen — Eijerdijk 87, Hattem"
+enableRobotsTXT = true
 
 [params]
-  description = "Kleinschalig en zelfstandig wonen in een prachtige villa met grote tuin in Hattem."
+  description = "Hoogwaardig zelfstandig wonen voor actieve senioren in Hattem, in een karaktervolle villa met tuin, rust en comfort."
   email = "info@huizekalverveen.nl"
   address = "Eijerdijk 87, 8051 XX Hattem"
   ogImage = "/images/villa-voorzijde.jpg"
   domainAlt = "huizekalverveen.nl"
+  city = "Hattem"
+  country = "NL"
 
 [menu]
   [[menu.main]]
