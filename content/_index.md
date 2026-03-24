@@ -4,7 +4,7 @@ description: "Hoogwaardig zelfstandig wonen voor actieve senioren in Hattem, nab
 type: "home"
 hero_kicker: "Hoogwaardig wonen voor actieve senioren"
 hero_title: "Luxe en zelfstandig wonen, in alle rust"
-hero_subtitle: "'t Kalverveen brengt hoogwaardige appartementen samen in een karaktervolle villa in Hattem. Een eigen plek, veel privacy en de mogelijkheid tot ontmoeting — stijlvol, rustig en op uw eigen tempo."
+hero_subtitle: "'t Kalverveen brengt hoogwaardige appartementen samen in een karaktervolle villa in Hattem. In deze vroege fase luisteren wij graag naar uw wensen, zodat het plan zo goed mogelijk aansluit op wat toekomstige bewoners belangrijk vinden."
 
 feiten:
   - titel: "Hoogwaardige appartementen"
@@ -113,6 +113,6 @@ faq:
   - vraag: "Kan ik het pand bezichtigen?"
     antwoord: "Ja, u kunt via het interesseformulier een kennismakingsgesprek of rondleiding aanvragen."
 
-cta_titel: "Interesse?"
-cta_tekst: "Laat uw gegevens achter en wij nemen contact met u op."
+cta_titel: "Denk in een vroeg stadium met ons mee"
+cta_tekst: "Uw input helpt ons om betere keuzes te maken. Deel uw wensen via de enquête; wij luisteren graag en nemen uw reactie mee in de verdere uitwerking."
 ---

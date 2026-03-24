@@ -9,6 +9,8 @@ typeform_long_url: ""
 
 Hartelijk dank voor uw interesse in 't Kalverveen.
 
+In deze fase horen wij graag vroegtijdig wat u belangrijk vindt. Zo kunnen wij het concept verder uitwerken op een manier die beter aansluit op de wensen van toekomstige bewoners.
+
 Kies de variant die bij u past:
 
 - **Korte enquête (±3 min)** voor snelle deelname

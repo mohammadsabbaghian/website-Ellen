@@ -9,7 +9,7 @@
       <h1 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "hero_title") }}>{{ .Params.hero_title | default .Title }}</h1>
       <p class="lead" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "hero_subtitle") }}>{{ .Params.hero_subtitle }}</p>
       <div class="hero-actions">
-        <a href="/interesse/" class="btn btn-primary">Plan een kennismaking</a>
+        <a href="/interesse/" class="btn btn-primary">Denk mee via de enquête</a>
         <a href="/over/" class="btn btn-secondary">Meer over 't Kalverveen</a>
       </div>
     </div>
@@ -139,7 +139,7 @@
     <h2 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "cta_titel") }}>{{ .Params.cta_titel | default "Interesse?" }}</h2>
     <p class="lead" {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "cta_tekst") }}>{{ .Params.cta_tekst | default "Laat uw gegevens achter en wij nemen contact met u op." }}</p>
     <div class="hero-actions" style="justify-content:center">
-      <a href="/interesse/" class="btn btn-primary">Ontvang informatie</a>
+      <a href="/interesse/" class="btn btn-primary">Geef uw input door</a>
       <a href="/contact/" class="btn btn-secondary">Contact opnemen</a>
     </div>
   </div>
