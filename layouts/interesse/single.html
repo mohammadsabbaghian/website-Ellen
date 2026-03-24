@@ -5,90 +5,466 @@
     <h1 {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "title") }}>{{ .Title }}</h1>
     <div {{ partial "ve-attrs.html" (dict "objectId" $pageFile "fieldPath" "markdown_content") }}>{{ .Content }}</div>
 
-    <form name="interesse" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/dank/">
-      <p class="visually-hidden">
-        <label>Niet invullen: <input name="bot-field"></label>
-      </p>
+    {{ if or .Params.typeform_short_url .Params.typeform_long_url }}
+    <section class="survey-typeform" aria-labelledby="typeform-title">
+      <h2 id="typeform-title">Invullen via Typeform</h2>
+      <p class="lead">Wilt u liever invullen via Typeform met ingebouwde voortgangsbalk? Kies hieronder een variant.</p>
+      <div class="survey-links">
+        {{ with .Params.typeform_short_url }}
+        <a class="btn btn-secondary" href="{{ . }}" target="_blank" rel="noopener">Start korte variant (Typeform)</a>
+        {{ end }}
+        {{ with .Params.typeform_long_url }}
+        <a class="btn btn-secondary" href="{{ . }}" target="_blank" rel="noopener">Start uitgebreide variant (Typeform)</a>
+        {{ end }}
+      </div>
+      <p class="form-hint">Liever op de website invullen? Gebruik dan het formulier hieronder.</p>
+    </section>
+    {{ end }}
 
-      <fieldset>
-        <legend>Uw gegevens</legend>
+    <section class="survey-block" aria-labelledby="kort-title">
+      <h2 id="kort-title">Korte enquête (±3 min)</h2>
+      <p class="lead">Voor snelle deelname. Focus op profiel, woningtype, services en prijsrichting.</p>
 
-        <div class="form-group">
-          <label for="naam">Naam <span aria-hidden="true">*</span></label>
-          <input type="text" id="naam" name="naam" required autocomplete="name">
-        </div>
-
-        <div class="form-group">
-          <label for="email">E-mailadres <span aria-hidden="true">*</span></label>
-          <input type="email" id="email" name="email" required autocomplete="email">
-        </div>
-
-        <div class="form-group">
-          <label for="telefoon">Telefoonnummer <span aria-hidden="true">*</span></label>
-          <input type="tel" id="telefoon" name="telefoon" required autocomplete="tel">
-        </div>
-
-        <div class="form-group">
-          <label for="rol">Ik ben <span aria-hidden="true">*</span></label>
-          <select id="rol" name="rol" required>
-            <option value="">— Kies —</option>
-            <option value="Mogelijk toekomstige bewoner">Mogelijk toekomstige bewoner</option>
-            <option value="Familie / mantelzorger">Familie / mantelzorger</option>
-            <option value="Professioneel betrokkene">Professioneel betrokkene</option>
-            <option value="Anders">Anders</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="stap">Gewenste volgende stap <span aria-hidden="true">*</span></label>
-          <select id="stap" name="gewenste_stap" required>
-            <option value="">— Kies —</option>
-            <option value="Informatie ontvangen">Informatie ontvangen</option>
-            <option value="Kennismakingsgesprek">Kennismakingsgesprek</option>
-            <option value="Rondleiding">Rondleiding</option>
-            <option value="Bel mij terug">Bel mij terug</option>
-          </select>
-        </div>
-      </fieldset>
-
-      <details class="form-extra">
-        <summary>Optioneel: vertel ons meer over uw woonwensen</summary>
-
-        <div class="form-group">
-          <label for="woningvoorkeur">Voorkeur woningtype</label>
-          <select id="woningvoorkeur" name="woningvoorkeur">
-            <option value="">— Geen voorkeur —</option>
-            <option value="Appartement in de villa">Appartement in de villa</option>
-            <option value="Compactere woning">Compactere woning</option>
-            <option value="Ruimere woning">Ruimere woning</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="grootte">Gewenste grootte</label>
-          <select id="grootte" name="grootte">
-            <option value="">— Geen voorkeur —</option>
-            <option value="25-40 m²">25–40 m²</option>
-            <option value="40-50 m²">40–50 m²</option>
-            <option value="50-60 m²">50–60 m²</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="toelichting">Toelichting of vragen</label>
-          <textarea id="toelichting" name="toelichting" rows="4"></textarea>
-        </div>
-      </details>
-
-      <div class="form-group form-check">
-        <label>
-          <input type="checkbox" name="privacy" required>
-          Ik ga akkoord met het <a href="/privacy/" target="_blank">privacybeleid</a>.
-        </label>
+      <div class="survey-progress-wrap">
+        <label for="progress-kort">Voortgang korte enquête</label>
+        <progress id="progress-kort" class="survey-progress" value="0" max="100">0%</progress>
+        <p class="form-hint"><span data-progress-text="interesse-kort">0%</span> ingevuld</p>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-submit">Verstuur mijn interesse</button>
-    </form>
+      <form name="interesse-kort" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/dank/" data-survey-progress="interesse-kort">
+        <input type="hidden" name="form-name" value="interesse-kort">
+        <input type="hidden" name="variant" value="kort-3-min">
+        <p class="visually-hidden">
+          <label>Niet invullen: <input name="bot-field"></label>
+        </p>
+
+        <fieldset>
+          <legend>1. Profiel</legend>
+
+          <div class="form-group">
+            <label for="s_leeftijd">Leeftijdscategorie <span aria-hidden="true">*</span></label>
+            <select id="s_leeftijd" name="leeftijdscategorie" required>
+              <option value="">— Kies —</option>
+              <option value="55-64">55–64</option>
+              <option value="65-74">65–74</option>
+              <option value="75+">75+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="s_huishouden">Huishouden <span aria-hidden="true">*</span></label>
+            <select id="s_huishouden" name="huishouden" required>
+              <option value="">— Kies —</option>
+              <option value="Alleen">Alleen</option>
+              <option value="Stel">Stel</option>
+              <option value="Anders">Anders</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="s_verhuisintentie">Verhuisintentie <span aria-hidden="true">*</span></label>
+            <select id="s_verhuisintentie" name="verhuisintentie" required>
+              <option value="">— Kies —</option>
+              <option value="Binnen 1 jaar">Binnen 1 jaar</option>
+              <option value="1-3 jaar">1–3 jaar</option>
+              <option value="Orienterend">Oriënterend</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Woonvoorkeuren</legend>
+
+          <div class="form-group">
+            <label for="s_gewenste_woning">Gewenste woning <span aria-hidden="true">*</span></label>
+            <select id="s_gewenste_woning" name="gewenste_woning" required>
+              <option value="">— Kies —</option>
+              <option value="Kamer 25-35m2">Kamer (±25–35 m²)</option>
+              <option value="Studio 45-65m2">Studio (±45–65 m²)</option>
+              <option value="Appartement 75+m2">Appartement (75+ m²)</option>
+            </select>
+          </div>
+
+          <fieldset class="nested-fieldset">
+            <legend>Belangrijkste kenmerken (maximaal 3) <span aria-hidden="true">*</span></legend>
+            <div class="option-grid option-grid-check" data-max-check="3">
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Gelijkvloers of lift" required> Gelijkvloers / Lift</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Buitenruimte"> Buitenruimte (balkon/tuin)</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Rustige omgeving"> Rustige omgeving</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Services"> Services</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Nabij voorzieningen"> Nabij voorzieningen</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Energiezuinig A+"> Energiezuinig (A+)</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Parkeerplek"> Parkeerplek</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Opslag of berging"> Opslag/berging</label>
+            </div>
+            <p class="form-hint" data-max-message hidden>U kunt maximaal 3 kenmerken selecteren.</p>
+          </fieldset>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Services en zorg</legend>
+
+          <div class="form-group">
+            <label for="s_services_belang">Hoe belangrijk zijn services voor u? <span aria-hidden="true">*</span></label>
+            <select id="s_services_belang" name="services_belang" required>
+              <option value="">— Kies —</option>
+              <option value="Niet belangrijk">Niet belangrijk</option>
+              <option value="Nice-to-have">Nice-to-have</option>
+              <option value="Belangrijk">Belangrijk</option>
+              <option value="Doorslaggevend">Doorslaggevend</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="s_zorgbehoefte">Zorgbehoefte (nu of verwacht) <span aria-hidden="true">*</span></label>
+            <select id="s_zorgbehoefte" name="zorgbehoefte" required>
+              <option value="">— Kies —</option>
+              <option value="Geen">Geen</option>
+              <option value="Licht huishoudelijk of comfort">Licht (huishoudelijk/comfort)</option>
+              <option value="Mogelijk later">Mogelijk later</option>
+              <option value="Structureel">Structureel</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>4. Prijsrichting</legend>
+          <p class="form-hint">Prijzen zijn indicatieve bandbreedtes en geen exacte belofte.</p>
+
+          <div class="form-group">
+            <label for="s_indicatieve_huur">Indicatieve huur (kale huur) <span aria-hidden="true">*</span></label>
+            <select id="s_indicatieve_huur" name="indicatieve_huur" required>
+              <option value="">— Kies —</option>
+              <option value="Studio 800-1000">Studio: €800–1000</option>
+              <option value="Studio 1000-1200">Studio: €1000–1200</option>
+              <option value="Studio 1200+">Studio: €1200+</option>
+              <option value="Appartement 1500-1800">Appartement: €1500–1800</option>
+              <option value="Appartement 1800-2000">Appartement: €1800–2000</option>
+              <option value="Appartement 2000+">Appartement: €2000+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="s_servicekosten">Servicekosten per maand <span aria-hidden="true">*</span></label>
+            <select id="s_servicekosten" name="servicekosten_per_maand" required>
+              <option value="">— Kies —</option>
+              <option value="150">€150</option>
+              <option value="300">€300</option>
+              <option value="500">€500</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>5. Op de hoogte blijven</legend>
+
+          <div class="form-group">
+            <label for="s_op_de_hoogte">Wilt u op de hoogte blijven? <span aria-hidden="true">*</span></label>
+            <select id="s_op_de_hoogte" name="op_de_hoogte_blijven" required>
+              <option value="">— Kies —</option>
+              <option value="Ja">Ja</option>
+              <option value="Nee">Nee</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="s_naam">Naam <span aria-hidden="true">*</span></label>
+            <input type="text" id="s_naam" name="naam" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="s_email">E-mailadres <span aria-hidden="true">*</span></label>
+            <input type="email" id="s_email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="s_telefoon">Telefoonnummer (optioneel)</label>
+            <input type="tel" id="s_telefoon" name="telefoon" autocomplete="tel">
+          </div>
+        </fieldset>
+
+        <div class="form-group form-check">
+          <label>
+            <input type="checkbox" name="privacy" required>
+            Ik ga akkoord met het <a href="/privacy/" target="_blank" rel="noopener">privacybeleid</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">Verstuur korte enquête</button>
+      </form>
+    </section>
+
+    <section class="survey-block" aria-labelledby="uitgebreid-title">
+      <h2 id="uitgebreid-title">Uitgebreide enquête (±7 min)</h2>
+      <p class="lead">Voor geïnteresseerden die uitgebreider willen meedenken over wonen, services en community.</p>
+
+      <div class="survey-progress-wrap">
+        <label for="progress-uitgebreid">Voortgang uitgebreide enquête</label>
+        <progress id="progress-uitgebreid" class="survey-progress" value="0" max="100">0%</progress>
+        <p class="form-hint"><span data-progress-text="interesse-uitgebreid">0%</span> ingevuld</p>
+      </div>
+
+      <form name="interesse-uitgebreid" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/dank/" data-survey-progress="interesse-uitgebreid">
+        <input type="hidden" name="form-name" value="interesse-uitgebreid">
+        <input type="hidden" name="variant" value="uitgebreid-7-min">
+        <p class="visually-hidden">
+          <label>Niet invullen: <input name="bot-field"></label>
+        </p>
+
+        <fieldset>
+          <legend>1. Profiel (segmentatie)</legend>
+
+          <div class="form-group">
+            <label for="l_leeftijd">1. Leeftijdscategorie <span aria-hidden="true">*</span></label>
+            <select id="l_leeftijd" name="leeftijdscategorie" required>
+              <option value="">— Kies —</option>
+              <option value="55-64">55–64</option>
+              <option value="65-74">65–74</option>
+              <option value="75+">75+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="l_huishouden">2. Huishouden <span aria-hidden="true">*</span></label>
+            <select id="l_huishouden" name="huishouden" required>
+              <option value="">— Kies —</option>
+              <option value="Alleen">Alleen</option>
+              <option value="Stel">Stel</option>
+              <option value="Anders">Anders</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="l_woonsituatie">3. Huidige woonsituatie <span aria-hidden="true">*</span></label>
+            <select id="l_woonsituatie" name="huidige_woonsituatie" required>
+              <option value="">— Kies —</option>
+              <option value="Koopwoning">Koopwoning</option>
+              <option value="Huurwoning">Huurwoning</option>
+              <option value="Appartement">Appartement</option>
+              <option value="Eengezinswoning">Eengezinswoning</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="l_verhuisintentie">4. Verhuisintentie <span aria-hidden="true">*</span></label>
+            <select id="l_verhuisintentie" name="verhuisintentie" required>
+              <option value="">— Kies —</option>
+              <option value="Binnen 1 jaar">Binnen 1 jaar</option>
+              <option value="1-3 jaar">1–3 jaar</option>
+              <option value="Orienterend">Oriënterend</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Woonvoorkeuren (product-fit)</legend>
+
+          <div class="form-group">
+            <label for="l_gewenste_woning">5. Gewenste woning <span aria-hidden="true">*</span></label>
+            <select id="l_gewenste_woning" name="gewenste_woning" required>
+              <option value="">— Kies —</option>
+              <option value="Kamer 25-35m2">Kamer (±25–35 m²)</option>
+              <option value="Studio 45-65m2">Studio (±45–65 m²)</option>
+              <option value="Appartement 75+m2">Appartement (75+ m²)</option>
+            </select>
+          </div>
+
+          <fieldset class="nested-fieldset">
+            <legend>6. Belangrijkste kenmerken (maximaal 3) <span aria-hidden="true">*</span></legend>
+            <div class="option-grid option-grid-check" data-max-check="3">
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Gelijkvloers of lift" required> Gelijkvloers / Lift</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Buitenruimte"> Buitenruimte (balkon/tuin)</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Rustige omgeving"> Rustige omgeving</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Services"> Services</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Nabij voorzieningen"> Nabij voorzieningen</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Energiezuinig A+"> Energiezuinig (A+)</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Parkeerplek"> Parkeerplek</label>
+              <label><input type="checkbox" name="belangrijkste_kenmerken" value="Opslag of berging"> Opslag/berging</label>
+            </div>
+            <p class="form-hint" data-max-message hidden>U kunt maximaal 3 kenmerken selecteren.</p>
+          </fieldset>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Services - behoefte</legend>
+
+          <fieldset class="nested-fieldset">
+            <legend>7. Welke services zijn waardevol voor u? (meerdere keuzes) <span aria-hidden="true">*</span></legend>
+            <div class="option-grid option-grid-check">
+              <label><input type="checkbox" name="waardevolle_services" value="Maaltijdservice" required> Maaltijdservice (dagelijks/regelmatig)</label>
+              <label><input type="checkbox" name="waardevolle_services" value="Schoonmaak"> Schoonmaak</label>
+              <label><input type="checkbox" name="waardevolle_services" value="Was en strijkservice"> Was- en strijkservice</label>
+              <label><input type="checkbox" name="waardevolle_services" value="Tuinonderhoud"> Tuinonderhoud</label>
+              <label><input type="checkbox" name="waardevolle_services" value="Klus en onderhoudsservice"> Klus-/onderhoudsservice</label>
+              <label><input type="checkbox" name="waardevolle_services" value="Activiteiten en sociale events"> Activiteiten/sociale events</label>
+              <label><input type="checkbox" name="waardevolle_services" value="Zorg op afroep"> Zorg op afroep (thuiszorg via partner)</label>
+              <label><input type="checkbox" name="waardevolle_services" value="Vervoersservice"> Vervoersservice</label>
+              <label><input type="checkbox" name="waardevolle_services" value="Geen behoefte"> Geen behoefte</label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="l_services_belang">8. Hoe belangrijk zijn services voor u? <span aria-hidden="true">*</span></label>
+            <select id="l_services_belang" name="services_belang" required>
+              <option value="">— Kies —</option>
+              <option value="Niet belangrijk">Niet belangrijk</option>
+              <option value="Nice-to-have">Nice-to-have</option>
+              <option value="Belangrijk">Belangrijk</option>
+              <option value="Doorslaggevend">Doorslaggevend</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="l_voorkeur_afname">9. Voorkeur afname <span aria-hidden="true">*</span></label>
+            <select id="l_voorkeur_afname" name="voorkeur_afname_services" required>
+              <option value="">— Kies —</option>
+              <option value="Alles zelf regelen">Alles zelf regelen</option>
+              <option value="Optioneel per dienst afnemen">Optioneel per dienst afnemen</option>
+              <option value="Bundel per maand">Bundel (servicepakket per maand)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>4. Zorgcomponent</legend>
+
+          <div class="form-group">
+            <label for="l_zorgbehoefte">10. Zorgbehoefte (nu / verwacht) <span aria-hidden="true">*</span></label>
+            <select id="l_zorgbehoefte" name="zorgbehoefte" required>
+              <option value="">— Kies —</option>
+              <option value="Geen">Geen</option>
+              <option value="Licht huishoudelijk of comfort">Licht (huishoudelijk/comfort)</option>
+              <option value="Mogelijk later">Mogelijk later</option>
+              <option value="Structureel">Structureel</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="l_zorg_organisatie">11. Hoe wilt u zorg georganiseerd zien? <span aria-hidden="true">*</span></label>
+            <select id="l_zorg_organisatie" name="zorg_organisatie" required>
+              <option value="">— Kies —</option>
+              <option value="Zelf regelen">Zelf regelen</option>
+              <option value="Via vaste partners van complex">Via vaste partners van het complex</option>
+              <option value="Volledig ontzorgd">Volledig ontzorgd (coördinatie door aanbieder)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>5. Prijsbereidheid</legend>
+          <p class="form-hint">Prijzen zijn indicatieve bandbreedtes en geen exacte belofte.</p>
+
+          <div class="form-group">
+            <label for="l_huur_studio">12a. Indicatieve huur studio (kale huur) <span aria-hidden="true">*</span></label>
+            <select id="l_huur_studio" name="huur_studio" required>
+              <option value="">— Kies —</option>
+              <option value="800-1000">€800–1000</option>
+              <option value="1000-1200">€1000–1200</option>
+              <option value="1200+">€1200+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="l_huur_appartement">12b. Indicatieve huur appartement (kale huur) <span aria-hidden="true">*</span></label>
+            <select id="l_huur_appartement" name="huur_appartement" required>
+              <option value="">— Kies —</option>
+              <option value="1500-1800">€1500–1800</option>
+              <option value="1800-2000">€1800–2000</option>
+              <option value="2000+">€2000+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="l_servicekosten">13. Servicekosten per maand <span aria-hidden="true">*</span></label>
+            <select id="l_servicekosten" name="servicekosten_per_maand" required>
+              <option value="">— Kies —</option>
+              <option value="150">€150</option>
+              <option value="300">€300</option>
+              <option value="500">€500</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="l_betalen_gemak">14. Betalen voor gemak <span aria-hidden="true">*</span></label>
+            <select id="l_betalen_gemak" name="betalen_voor_gemak" required>
+              <option value="">— Kies —</option>
+              <option value="Liever minder betalen en zelf regelen">Ik betaal liever minder en regel zelf</option>
+              <option value="Graag meer betalen voor ontzorging">Ik betaal graag meer voor ontzorging</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>6. Community en concept</legend>
+
+          <fieldset class="nested-fieldset">
+            <legend>15. Interesse in gemeenschappelijke elementen (meerdere keuzes) <span aria-hidden="true">*</span></legend>
+            <div class="option-grid option-grid-check">
+              <label><input type="checkbox" name="community_elementen" value="Gezamenlijke ruimte" required> Gezamenlijke ruimte</label>
+              <label><input type="checkbox" name="community_elementen" value="Samen eten"> Samen eten</label>
+              <label><input type="checkbox" name="community_elementen" value="Activiteiten"> Activiteiten</label>
+              <label><input type="checkbox" name="community_elementen" value="Geen behoefte"> Geen behoefte</label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="l_concept_aantrekkelijk">16. Wat spreekt u het meest aan in dit concept? <span aria-hidden="true">*</span></label>
+            <textarea id="l_concept_aantrekkelijk" name="wat_spreekt_meest_aan" rows="4" required></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>7. Call-to-action</legend>
+
+          <div class="form-group">
+            <label for="l_op_de_hoogte">17. Wilt u op de hoogte blijven? <span aria-hidden="true">*</span></label>
+            <select id="l_op_de_hoogte" name="op_de_hoogte_blijven" required>
+              <option value="">— Kies —</option>
+              <option value="Ja">Ja</option>
+              <option value="Nee">Nee</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="l_naam">18. Naam <span aria-hidden="true">*</span></label>
+            <input type="text" id="l_naam" name="naam" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="l_email">18. E-mailadres <span aria-hidden="true">*</span></label>
+            <input type="email" id="l_email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="l_telefoon">18. Telefoon (optioneel)</label>
+            <input type="tel" id="l_telefoon" name="telefoon" autocomplete="tel">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>8. Optioneel</legend>
+
+          <div class="form-group">
+            <label for="l_belemmering">19. Wat zou u tegenhouden om hier te wonen?</label>
+            <textarea id="l_belemmering" name="wat_zou_u_tegenhouden" rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="l_opmerkingen">20. Aanvullende wensen of opmerkingen</label>
+            <textarea id="l_opmerkingen" name="aanvullende_wensen_opmerkingen" rows="3"></textarea>
+          </div>
+        </fieldset>
+
+        <div class="form-group form-check">
+          <label>
+            <input type="checkbox" name="privacy" required>
+            Ik ga akkoord met het <a href="/privacy/" target="_blank" rel="noopener">privacybeleid</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">Verstuur uitgebreide enquête</button>
+      </form>
+    </section>
   </div>
 </section>
 {{ end }}

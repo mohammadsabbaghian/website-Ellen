@@ -105,6 +105,8 @@ collections:
           - { label: "Layout", name: "layout", widget: "hidden", default: "interesse" }
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Beschrijving (SEO)", name: "description", widget: "string" }
+          - { label: "Typeform korte variant URL (optioneel)", name: "typeform_short_url", widget: "string", required: false }
+          - { label: "Typeform uitgebreide variant URL (optioneel)", name: "typeform_long_url", widget: "string", required: false }
           - { label: "Introductie", name: "body", widget: "markdown" }
 
       - name: "contact"

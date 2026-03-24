@@ -207,6 +207,8 @@ const interesseModel: Model = {
   fields: [
     { type: 'string', name: 'title', label: 'Titel', required: true, group: 'content' },
     { type: 'string', name: 'description', label: 'Beschrijving', required: true, group: 'seo' },
+    { type: 'string', name: 'typeform_short_url', label: 'Typeform korte variant URL', required: false, group: 'content' },
+    { type: 'string', name: 'typeform_long_url', label: 'Typeform uitgebreide variant URL', required: false, group: 'content' },
     { type: 'markdown', name: 'markdown_content', label: 'Introductie', required: true, group: 'content' },
     { type: 'string', name: 'layout', const: 'interesse', hidden: true },
     { type: 'string', name: 'type', const: 'interesse', hidden: true }

@@ -1,10 +1,24 @@
 ---
 title: "Interesse"
-description: "Meld uw interesse voor 't Kalverveen. Wij nemen contact met u op."
+description: "Vul de korte of uitgebreide enquête in over wonen, services en zorgvoorkeuren voor 't Kalverveen."
 type: "interesse"
 layout: "interesse"
+typeform_short_url: ""
+typeform_long_url: ""
 ---
 
-Fijn dat u interesse heeft in 't Kalverveen. Vul onderstaand formulier in en wij nemen zo snel mogelijk contact met u op.
+Fijn dat u interesse heeft in 't Kalverveen.
 
-Velden met een **\*** zijn verplicht. De rest is optioneel — maar helpt ons om u beter te informeren.
+Kies de variant die bij u past:
+
+- **Korte enquête (±3 min)** voor snelle deelname
+- **Uitgebreide enquête (±7 min)** als u uitgebreider wilt meedenken
+
+Uw antwoorden helpen ons met:
+
+- behoefte aan services (hoeveel mensen dit belangrijk of doorslaggevend vinden)
+- voorkeur voor bundel versus losse diensten
+- prijsbandbreedtes voor huur en servicekosten
+- verschillen tussen interesse in studio en appartement
+
+Let op: prijsvragen zijn indicatief en gebruiken bandbreedtes, geen exacte prijsbeloftes.
