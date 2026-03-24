@@ -95,7 +95,35 @@
     });
   }
 
+  function setupConditionalContactFields() {
+    var wrappers = document.querySelectorAll("[data-contact-fields]");
+
+    wrappers.forEach(function (wrapper) {
+      var triggerId = wrapper.getAttribute("data-contact-fields");
+      var trigger = document.getElementById(triggerId);
+      if (!trigger) return;
+
+      var requiredInputs = Array.prototype.slice.call(wrapper.querySelectorAll("[data-contact-required]"));
+
+      function updateVisibility() {
+        var shouldShow = String(trigger.value || "").toLowerCase() === "ja";
+        wrapper.hidden = !shouldShow;
+
+        requiredInputs.forEach(function (input) {
+          input.required = shouldShow;
+          if (!shouldShow) {
+            input.value = "";
+          }
+        });
+      }
+
+      trigger.addEventListener("change", updateVisibility);
+      updateVisibility();
+    });
+  }
+
   setupLimitedCheckboxGroups();
+  setupConditionalContactFields();
   setupSurveyProgress();
 
   window.addEventListener("stackbitObjectsChanged", function () {
