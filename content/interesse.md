@@ -18,7 +18,7 @@ Uw antwoorden helpen ons onder meer bij:
 
 - het bepalen van de behoefte aan aanvullende services
 - het afstemmen van woningtypes op de doelgroep
-- het toetsen van richtprijzen en acceptatie per woningtype
+- het aanscherpen van de invulling van wonen, services en zorg
 - het vormgeven van vervolgcommunicatie met geïnteresseerden
 
-Let op: prijsvragen zijn indicatief en gebruiken bandbreedtes, zonder exacte prijsbelofte.
+Let op: de indicatieve huur ligt momenteel rond €2.700 per maand inclusief servicekosten. Daarom wordt prijs niet apart in deze enquête uitgevraagd.
